@@ -1,8 +1,8 @@
 module.exports = {
-  title: `zoomkoding.com`,
-  description: `줌코딩의 개발일기`,
+  title: `망각의 코딩러`,
+  description: `황성진의 개발일기`,
   language: `ko`, // `ko`, `en` => currently support versions for Korean and English
-  siteUrl: `https://www.zoomkoding.com`,
+  siteUrl: `https://hsungjin.github.io`,
   ogImage: `/og-image.png`, // Path to your in the 'static' folder
   comments: {
     utterances: {
@@ -11,16 +11,16 @@ module.exports = {
   },
   ga: '0', // Google Analytics Tracking ID
   author: {
-    name: `정진혁`,
+    name: `황성진`,
     bio: {
-      role: `개발자`,
-      description: ['사람에 가치를 두는', '능동적으로 일하는', '이로운 것을 만드는'],
-      thumbnail: 'sample.png', // Path to the image in the 'asset' folder
+      role: `iOS 개발자`,
+      description: ['WWDC와 친한', '스스로 학습하는', '소통을 중요시 하는'],
+      thumbnail: 'thumbnail.gir', // Path to the image in the 'asset' folder
     },
     social: {
-      github: ``, // `https://github.com/zoomKoding`,
-      linkedIn: ``, // `https://www.linkedin.com/in/jinhyeok-jeong-800871192`,
-      email: ``, // `zoomkoding@gmail.com`,
+      github: `https://github.com/Hsungjin`, // `https://github.com/zoomKoding`,
+      linkedIn: `https://velog.io/@hsungjin__/posts`, // `https://www.linkedin.com/in/jinhyeok-jeong-800871192`,
+      email: `hsungjin142@gmail.com`, // `zoomkoding@gmail.com`,
     },
   },
 
@@ -30,10 +30,10 @@ module.exports = {
       // =====       [Timestamp Sample and Structure]      =====
       // ===== 🚫 Don't erase this sample (여기 지우지 마세요!) =====
       {
-        date: '',
-        activity: '',
+        date: '2023.07 ~ ',
+        activity: 'iOS 개발',
         links: {
-          github: '',
+          github: 'https://github.com/Hsungjin',
           post: '',
           googlePlay: '',
           appStore: '',
