@@ -15,7 +15,7 @@ module.exports = {
     bio: {
       role: `iOS 개발자`,
       description: ['WWDC와 친한', '스스로 학습하는', '소통을 중요시 하는'],
-      thumbnail: 'thumbnail.gir', // Path to the image in the 'asset' folder
+      thumbnail: 'thumbnail.gif', // Path to the image in the 'asset' folder
     },
     social: {
       github: `https://github.com/Hsungjin`, // `https://github.com/zoomKoding`,
