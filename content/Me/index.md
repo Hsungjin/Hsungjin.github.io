@@ -74,6 +74,3 @@ categories: AboueMe
 나 스스로 발전해 나가면서 WWDC에 맞게 끊임없이 공부하는 개발자가 되고 싶습니다.
 
 <br><br>
-
-```toc
-```
