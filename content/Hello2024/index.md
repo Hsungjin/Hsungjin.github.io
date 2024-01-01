@@ -1,11 +1,12 @@
 ---
 emoji: 🎉
 title: [회고]2023년의 나는 어땠을까?
-date: '2024-01-01 00:00:00'
+date: '2024-01-01 16:00:00'
 author: 황성진
 tags: About me
 categories: AboueMe
 ---
+
 <p align="center">
   <img src="https://github.com/4T2F/ThinkBig/assets/120264964/6e0c20b0-947a-4422-81e0-b9696ee274e2"> <br>
   Happy 2024
