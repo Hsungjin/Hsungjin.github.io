@@ -173,6 +173,8 @@ iOS는 앱이 사용되는 동안 '나의 위치 정보를 제공하겠는가?'�
 
 [네이버 공식문서](https://navermaps.github.io/ios-map-sdk/guide-ko/0.html) 공식문서를 보시면 어떤 값을 넣어 사용하는지 이해가 더 잘될거라고 생각됩니다.
 
+<br><br>
+
 ### ContentView.swift
 
 ContentView 에서 NaverMap 서브 뷰를 호출해서 사용합니다.
@@ -527,13 +529,17 @@ struct NaverMapApp: App {
 
 막상 코드를 보면 이해가 되었는데 역시 글로 쓰면서 설명하는건 쉽지 않은것 같습니다.
 
+<br><br>
+
 ## 전체 코드
 [깃허브 소스코드](https://github.com/Hsungjin/SwiftUI-Study/tree/main/NaverMap/NaverMap) 전체 소스 코드입니다.
 
 <br><br>
 
 ## 참고 블로그
+
 [[iOS/Swift] 네이버 지도(Maps) 사용하기](https://jeong9216.tistory.com/198)
+
 [SwiftUI Firebase firestore 연동 (2)](https://dev-workplace.tistory.com/9)
 
 ```toc
