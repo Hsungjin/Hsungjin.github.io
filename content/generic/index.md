@@ -26,6 +26,36 @@ Swift에서 제공하는 강력한 기능 중 하나로 제네릭을 이용해 �
 
 <br><br>
 
+## Generic의 중요성
+
+1. 타입 안전성: 제네릭을 사용하면 다양한 타입에 대해 동일한 작업을 수행할 수 있으면서도 타입 안전성을 유지할 수 있습니다.
+
+2. 재사용성: 한 번 정의한 제네릭 코드는 다양한 타입에 대해 재사용할 수 있어 코드 중복을 줄일 수 있습니다.
+
+3. 유연성: 제네릭을 사용하면 특정 타입에 국한되지 않고 여러 타입에 대해 유연하게 함수나 클래스를 사용할 수 있습니다.
+
+<br><br>
+
+## Generic 타입의 제약 조건 설정 방법
+
+Swift에서 제네릭 타입에 제약 조건을 설정하는 것은 해당 타입이 특정 프로토콜을 준수하거나 특정 클래스를 상속받아야 함을 의미합니다. 
+
+이를 통해 제네릭 함수나 클래스 내부에서 타입의 특정 속성이나 메소드를 안전하게 사용할 수 있습니다.
+
+예를 들어, Comparable 프로토콜을 준수하는 타입에 대해서만 작동하는 함수를 작성하려면 다음과 같이 할 수 있습니다.
+
+```swift
+func compareTwoValues<T: Comparable>(_ value1: T, _ value2: T) -> Bool {
+    return value1 < value2
+}
+```
+
+<br><br>
+
+T는 Comparable을 준수해야 하므로 <, >, == 등의 비교 연산자를 사용할 수 있습니다.
+
+<br><br>
+
 ## Generic 사용해보기
 
 제네릭의 기본적인 사용 방법을 코드 예시와 함께 살펴보겠습니다.
@@ -272,8 +302,87 @@ doubleStack에서는 Stack<Double> 이라는 타입을 선언해주고 stringSta
 
 <br><br>
 
-### 작성중...
+## 제네릭과 관련된 성능 문제 해결 방법
 
+1. 타입 명확화(Type Erasure): 제네릭을 사용할 때, 컴파일러는 각 타입 인스턴스에 대해 별도의 코드를 생성합니다. 이는 메모리 사용과 실행 시간 측면에서 비효율적일 수 있습니다. 타입 명확화는 이러한 문제를 해결하기 위해 사용되며, 런타임에 타입 정보를 지워 단일 타입으로 처리합니다.
+
+```swift
+func substractTwoValue<T>(a: T, b: T) -> T {
+    return a - b
+}
+
+// 보다는 타입을 명확화 하여사용
+
+func substractTwoValue<T: BinaryInteger>(a: T, b: T) -> T {
+    return a - b
+}
+```
+
+<br>
+
+
+2. 프로토콜 지향 프로그래밍: 제네릭 대신 프로토콜을 사용하여 유사한 기능을 구현할 수 있습니다. 프로토콜은 런타임 다형성을 제공하며, 컴파일 시 제네릭보다 더 효율적일 수 있습니다.
+
+```swift
+protocol Container {
+    var count: Int { get }
+    mutating func append(_ item: ItemType)
+}
+
+class MyContainer: Container {
+    var items: Array<Int> = Array<Int>()
+
+    var count: Int {
+        return items.count
+    }
+
+    func append(_ item: Int) {
+        items.append(item)
+    }
+
+}
+```
+
+<br>
+
+3. 최적화된 자료구조 사용: 특정 작업에 대해 최적화된 자료구조를 사용하여 성능을 향상시킬 수 있습니다. 예를 들어, 대용량 데이터를 다룰 때는 배열 대신 연결 리스트나 해시 테이블을 고려할 수 있습니다.
+
+```swift
+let array = [1, 2, 2, 3, 4, 4, 5]
+let uniqueElements = Set(array) // 중복 요소 제거
+```
+
+<br>
+
+4. 컴파일러 힌트 제공: 때로는 컴파일러에게 추가 정보를 제공하여 최적화를 돕는 것이 유용할 수 있습니다. 예를 들어, @inlinable 및 @inline(__always) 속성을 사용하여 특정 함수가 인라인 될 수 있도록 할 수 있습니다.
+
+```swift
+@inlinable
+func multiplyByTwo(_ value: Int) -> Int {
+    return value * 2
+}
+```
+
+<br>
+
+ - @inlinable
+   - 인라인이란, 메서드 호출을 해당 메서드의 본문으로 대체하는 컴파일러 최적화 방법
+   
+   - 인라인을 사용하면 오버헤드를 줄일 수 있으므로, 구현부가 간단한 메소드인 것들을 인라인으로 설정하여 오버헤드를 낮추어 컴파일러 최적화를 적용 (단 재귀호출 시 사용하면 더 비효율적)
+
+ ```swift
+ // 일반적인 사용
+func printPlusOne(number: Int) {
+    print("value is \(number + 1)")
+}
+
+@inlinable
+func printPlusOne(number: Int) {
+    print("value is \(number + 1)")
+}
+ ```
+
+<br><br>
 
 ## 참고
 
